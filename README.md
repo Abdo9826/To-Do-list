@@ -10,17 +10,8 @@ To Do list
 - CSS
 - Javascript
 
-## Live Demo (if available)
-
-[Live Demo Link]
 
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
 
 ### Install
 
