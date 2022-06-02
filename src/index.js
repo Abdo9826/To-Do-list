@@ -35,9 +35,7 @@ list.addEventListener('click', (e) => {
   e.target.parentElement.remove();
   const selectedindex = e.target.id;
   let items = JSON.parse(localStorage.getItem('tasks'));
-  items = items.filter((e) => {
-    return e.index !== Number(selectedindex);
-  });
+  items = items.filter((e) => e.index !== Number(selectedindex));
   localStorage.setItem('tasks', JSON.stringify(items));
 });
 
