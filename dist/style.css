@@ -49,6 +49,9 @@ li {
   height: 35px;
 }
 
-.svg {
-  margin-left: 95%;
+.remove {
+  color: #706d6d;
+  text-decoration: none;
+  float: right;
+  margin-right: 10px;
 }
