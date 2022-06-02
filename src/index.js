@@ -1,4 +1,3 @@
-
 const description = document.querySelector('.text');
 const enter = document.querySelector('.enter');
 const list = document.querySelector('.list');
@@ -37,16 +36,13 @@ list.addEventListener('click', (e) => {
   if(e.target.innerHTML = 'delete') {
     e.target.parentElement.remove()
     let selectedindex = e.target.id;
-    console.log(selectedindex);
     let items = JSON.parse(localStorage.getItem('tasks'));
-    console.log(items)
-    items = items.filter(function(e) {return e.index != selectedindex;});
-    console.log(items)
+    items = items.filter(function(e) {return e.index !== Number(selectedindex);});
     localStorage.setItem("tasks", JSON.stringify(items));
   }
-})
+});
 
-window.onbeforeunload = function() {
+window.onbeforeunload = () => {
   localStorage.removeItem('tasks');
   return '';
 };
