@@ -37,8 +37,8 @@ document.body.addEventListener('click', (e) => {
     let items = JSON.parse(localStorage.getItem('tasks'));
     items = items.filter((e) => e.index !== Number(selectedindex));
     localStorage.setItem('tasks', JSON.stringify(items));
-  } else if (e.target.tagName == 'INPUT' && e.target.type == 'checkbox') {
-    if (e.target.checked == true) {
+  } else if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
+    if (e.target.checked === true) {
       const li = e.target.parentElement;
       li.classList.add('line');
     } else {
