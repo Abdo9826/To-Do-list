@@ -18,7 +18,7 @@ ul {
   margin-left: 10px;
   padding-left: 10px;
   border: none;
-  font-style:oblique;
+  font-style: oblique;
 }
 
 hr {
@@ -31,6 +31,15 @@ ul {
 
 li {
   margin-top: 10px;
+  /* text-decoration-line: line-through; */
+}
+
+.line {
+  text-decoration-line: line-through;
+}
+
+.none {
+  display: none;
 }
 
 .clear-btn {
