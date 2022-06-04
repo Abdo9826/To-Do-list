@@ -15,5 +15,5 @@ module.exports = {
   //     title: 'Webpack App',
   //     filename: 'index.html',
   //   }),
-  ],
+  // ],
 };
