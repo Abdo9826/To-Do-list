@@ -10,10 +10,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     title: 'Webpack App',
-  //     filename: 'index.html',
-  //   }),
-  // ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'index.html',
+    }),
+  ],
 };
