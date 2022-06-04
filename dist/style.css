@@ -31,15 +31,6 @@ ul {
 
 li {
   margin-top: 10px;
-  /* text-decoration-line: line-through; */
-}
-
-.line {
-  text-decoration-line: line-through;
-}
-
-.none {
-  display: none;
 }
 
 .clear-btn {
@@ -63,4 +54,8 @@ li {
   text-decoration: none;
   float: right;
   margin-right: 10px;
+}
+
+.line {
+  text-decoration-line: line-through;
 }

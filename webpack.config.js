@@ -1,34 +1,20 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-htmlwebpack-plugin');
+const { httpify } = require('caseless');
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.js',
+    bundle: path.resolve(__dirname, 'src/index.js'),
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      title: 'Webpack App',
+      filename: 'index.html',
     }),
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-  },
-  optimization: {
-    runtimeChunk: 'single',
-  },
 };
