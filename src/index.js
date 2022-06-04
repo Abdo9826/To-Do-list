@@ -1,11 +1,11 @@
 const description = document.querySelector('.text');
 const enter = document.querySelector('.enter');
 const list = document.querySelector('.list');
-const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 const UI = ({ description, index }) => {
-  list.innerHTML += `<li><input type="checkbox" name="name" >${description}<a id = "${index}" class ="remove" href="#">delete</a>
-  <hr></li>`;
+  list.innerHTML += `<li><input id= "${index}" type="checkbox" name="name" >${description}<a id = "${index}" class ="remove" href="#">delete</a>
+ <hr> </li>`;
 };
 
 class Task {
@@ -30,13 +30,41 @@ enter.addEventListener('click', (e) => {
   description.value = '';
 });
 
-list.addEventListener('click', (e) => {
-  e.preventDefault();
-  e.target.parentElement.remove();
-  const selectedindex = e.target.id;
-  let items = JSON.parse(localStorage.getItem('tasks'));
-  items = items.filter((e) => e.index !== Number(selectedindex));
-  localStorage.setItem('tasks', JSON.stringify(items));
+document.body.addEventListener('click', (e) => {
+  tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  if (e.target.classList.contains('remove')) {
+    e.target.parentElement.remove();
+    const selectedindex = e.target.id;
+    let items = JSON.parse(localStorage.getItem('tasks'));
+    items = items.filter((e) => e.index !== Number(selectedindex));
+    localStorage.setItem('tasks', JSON.stringify(items));
+  } else if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
+    if (e.target.checked === true) {
+      const li = e.target.parentElement;
+      const selectedindex = e.target.id;
+      tasks[Number(selectedindex)].completed = true;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      li.classList.add('line');
+    } else {
+      const li = e.target.parentElement;
+      const selectedindex = e.target.id;
+      tasks[Number(selectedindex)].completed = false;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      li.classList.remove('line');
+    }
+  }
+
+  const liline1 = document.querySelectorAll('.line');
+
+  for (let i = 0; i < liline1.length; i += 1) {
+    if (e.target.classList.contains('clear-btn')) {
+      const liline = document.querySelector('.line');
+      liline.remove();
+      const clearArrray = tasks.filter((Objects) => Objects.completed !== true);
+
+      localStorage.setItem('tasks', JSON.stringify(clearArrray));
+    }
+  }
 });
 
 window.onbeforeunload = () => {

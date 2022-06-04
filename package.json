@@ -598,6 +598,7 @@
     "w3c-xmlserializer": "^3.0.0",
     "wcwidth": "^1.0.1",
     "webidl-conversions": "^7.0.0",
+    "webpack-dev-server": "^4.9.1",
     "whatwg-encoding": "^2.0.0",
     "whatwg-mimetype": "^3.0.0",
     "whatwg-url": "^11.0.0",
@@ -625,7 +626,8 @@
     "webpack-cli": "^4.9.2"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",

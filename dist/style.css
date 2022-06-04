@@ -18,7 +18,7 @@ ul {
   margin-left: 10px;
   padding-left: 10px;
   border: none;
-  font-style:oblique;
+  font-style: oblique;
 }
 
 hr {
@@ -54,4 +54,8 @@ li {
   text-decoration: none;
   float: right;
   margin-right: 10px;
+}
+
+.line {
+  text-decoration-line: line-through;
 }
