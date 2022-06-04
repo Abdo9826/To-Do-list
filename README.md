@@ -11,7 +11,7 @@ To Do list
 - Javascript
 
 
-link of the project {http://127.0.0.1:5500/dist/index.htmlg}
+link of the project {http://127.0.0.1:5500/dist/index.html?}
 
 ### Install
 
