@@ -626,7 +626,8 @@
     "webpack-cli": "^4.9.2"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
