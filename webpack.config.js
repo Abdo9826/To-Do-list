@@ -16,6 +16,4 @@ module.exports = {
   //       filename: 'index.html',
   //     }),
   //   ],
-
-  //I cant run I have an error I domt know why
 };
